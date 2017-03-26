@@ -1,0 +1,14 @@
+<form (ngSubmit)="save()" >
+	<div class="input-group">
+		<label for="name">Nome</label>
+		<input type="text" [(ngModel)] = "parking.name" name="name" class="form-control">
+	</div>
+	<div class="input-group">
+		<label for="description">Descrição</label>
+		<input type="text" [(ngModel)] = "parking.description" name="description" class="form-control">
+	</div>
+	<div class="input-group">
+		<a routerLink = "" class="btn btn-primary"> Voltar </a>
+		<button type="submit"  class="btn btn-primary"> Salvar </button>
+	</div>
+</form>

@@ -1,0 +1,21 @@
+<table class="table">
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Nome</td>
+			<td>Descrição</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let q of parkings" >
+			<td>{{ q.name }}</td>
+			<td>{{ q.description }}</td>
+			<td><a [routerLink] = "['/parkings',q._id]">Editar</a></td>
+			<td><a (click)="deleteQuestion(q)" href="">Deletar</a></td>
+		</tr>	
+	</tbody>
+</table>
+
+<a routerLink="/parkings/new" class="btn btn-primary">
+    Novo Estacionamento
+  </a>
