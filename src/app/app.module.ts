@@ -9,13 +9,16 @@ import { ParkingsComponent } from './parkings/parkings.component';
 
 import { ParkingService } from './parkings/shared/parking.service';
 import { ParkingFormComponent } from './parkings/parking-form/parking-form.component';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './_service/login.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ParkingsComponent,
-    ParkingFormComponent
+    ParkingFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { ParkingFormComponent } from './parkings/parking-form/parking-form.compo
     HttpModule,
     routing
   ],
-  providers: [ParkingService],
+  providers: [ParkingService, LoginService],
   bootstrap: [AppComponent]
 })
 

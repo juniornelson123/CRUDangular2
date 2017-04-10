@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -15,8 +15,10 @@ export class ParkingService {
   	constructor(private http: Http) { }
 
   	//Pega os estacionamentos da api
-  	getParkings(){
-  		return this.http.get(this.url+"/parkings")
+  	getParkings(header){
+
+      let headers =  new Headers({"token": header})
+  		return this.http.get(this.url+"/parkings",{headers: headers})
   			.map(res => res.json());
   	}
 

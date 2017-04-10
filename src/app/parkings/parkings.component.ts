@@ -15,11 +15,11 @@ export class ParkingsComponent implements OnInit {
 
 	//Pega a lista de estacionamentos assim que o componente iniciar
 	ngOnInit() {
-
-		this.parkingService.getParkings()
+		let user = JSON.parse(localStorage.getItem('currentUser'))
+		this.parkingService.getParkings(user.token)
 			.subscribe(data => this.parkings = data);
 
-		console.log(this.parkings)	
+		console.log(user.token)	
 	}
 
 	deleteQuestion(parking: Parking){
